@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.test.selenium.TestSelenium" tests="1" skipped="1" failures="0" errors="0" timestamp="2015-08-18T05:42:59" hostname="shreejit-mac.local" time="0.001">
+  <properties/>
+  <testcase name="testLogin" classname="com.test.selenium.TestSelenium" time="0.001">
+    <skipped/>
+  </testcase>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
