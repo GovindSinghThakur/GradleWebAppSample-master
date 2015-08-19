@@ -1,11 +1,10 @@
 package com.test.selenium;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-@Ignore
+
 public class TestSelenium {
 	@Test //This is Junit annotation
     public void testLogin()
