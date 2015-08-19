@@ -2,7 +2,19 @@ apply plugin: "java"
 apply plugin: "war"
 apply plugin: "jetty"
 apply plugin: 'jacoco'
-apply plugin: ‘eclipse’
+apply plugin: 'eclipse'
+
+
+
+
+
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+repositories {
+        mavenCentral()
+}
 
 dependencies {
    compile project(":utils")
@@ -15,6 +27,22 @@ dependencies {
    compile group: 'org.seleniumhq.selenium', name: 'selenium-chrome-driver', version:'2.+'
    compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version:'2.+'
    compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:'2.+'
+}
+sourceSets {
+    selenium
+}
+task jettyDaemon(type: org.gradle.api.plugins.jetty.JettyRun) {
+    daemon = true
+}
+
+task selenium(type: Test, dependsOn: jettyDaemon) {
+    testClassesDir = sourceSets.selenium.output.classesDir
+    classpath = sourceSets.selenium.runtimeClasspath
+}
+eclipse {
+    classpath {
+        plusConfigurations += configurations.seleniumCompile
+    }
 }
 
 task wrapper(type: Wrapper){
